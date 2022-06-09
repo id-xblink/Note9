@@ -1,0 +1,37 @@
+﻿<Window x:Class="WpfAppNote9.HelpMapW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNote9"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Note9" Height="450" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <m:Map x:Name="MMap" CredentialsProvider="9GMw9dwc8eATtJmg4oY8~57C9KnRNLv6fBOfHYLrPyQ~AiDj064FilyezL3-242cR5phxDlQzCMlRbvZSwWwkFePLVw1pGpQ7MsCycDDQ_q-"
+               Mode="Road" Grid.Row="1" Grid.Column="1" ZoomLevel="2" Center="35,0" MouseRightButtonUp="MMap_MouseRightButtonUp">
+                <m:Map.Background>
+                    <ImageBrush ImageSource="{DynamicResource BackgroundImage}" Stretch="UniformToFill" Opacity="0.5"/>
+                </m:Map.Background>
+            </m:Map>
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BBack" Grid.Column="0" Content="Отмена" Click="BBack_Click" Margin="10"/>
+            <Button x:Name="BCancel" Grid.Column="1" Content="Очистить" Click="BCancel_Click" Margin="10"/>
+            <Button x:Name="BSave" Grid.Column="2" Content="Сохранить" Click="BSave_Click" Margin="10"/>
+        </Grid>
+    </Grid>
+</Window>

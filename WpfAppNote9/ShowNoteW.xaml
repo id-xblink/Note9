@@ -1,0 +1,68 @@
+﻿<Window x:Class="WpfAppNote9.ShowNoteW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNote9"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Title="Note9" Height="550" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Image Stretch="UniformToFill" Source="{DynamicResource BackgroundImage}"/>
+
+        <Border Background="{DynamicResource MaterialDesignPaper}" Margin="50" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50" Color="{DynamicResource Accent100}" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+
+
+                        <materialDesign:PackIcon Kind="Note" Width="75" Height="75" BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignBody}">
+                            <materialDesign:PackIcon.Foreground>
+                                <SolidColorBrush Color="{DynamicResource Primary400}"/>
+                            </materialDesign:PackIcon.Foreground>
+                        </materialDesign:PackIcon>
+
+                        <TextBlock Grid.Column="1" x:Name="TBTitle" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10 0"/>
+
+                        <TextBlock Grid.Column="2" Grid.ColumnSpan="3" x:Name="TBDate" Text="Создана 00-00-2019 в 18:10:12" FontSize="13" VerticalAlignment="Top"/>
+
+                        <materialDesign:PackIcon Margin="5" x:Name="IAlarm" Grid.Column="2" Kind="Alarm" Width="50" Height="50" Foreground="#bd0000" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                        <materialDesign:PackIcon Margin="5" x:Name="IMap" Grid.Column="3" Kind="Map" Width="50" Height="50" Foreground="#bd0000" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                        <materialDesign:PackIcon Margin="5" x:Name="IHistory" Grid.Column="4" Kind="History" Width="50" Height="50" Foreground="#bd0000" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Border BorderThickness="1" Margin="0 -1 0 0" BorderBrush="{DynamicResource MaterialDesignBody}"/>
+                        <TextBox IsReadOnly="True" x:Name="TBText" Grid.Row="1" FontSize="14" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" materialDesign:HintAssist.Hint="Текст" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="10"/>
+                    </Grid>
+                </Grid>
+
+                <Button Margin="0 10 0 0" Grid.Row="1" x:Name="Exit" HorizontalAlignment="Left" Content="Закрыть" Click="Exit_Click"/>
+                <Button Margin="0 10 0 0" Grid.Row="1" x:Name="BGo" HorizontalAlignment="Right" Content="Изменить" Click="BGo_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

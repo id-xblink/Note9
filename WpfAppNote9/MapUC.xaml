@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="WpfAppNote9.MapUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAppNote9"
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid x:Name="GTool">
+            <Rectangle Height="2" VerticalAlignment="Bottom">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{DynamicResource Primary400}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+
+        <Grid Background="{DynamicResource MaterialDesignPaper}" Grid.Row="1">
+            <m:Map Background="{DynamicResource MaterialDesignPaper}" x:Name="MMap" CredentialsProvider="9GMw9dwc8eATtJmg4oY8~57C9KnRNLv6fBOfHYLrPyQ~AiDj064FilyezL3-242cR5phxDlQzCMlRbvZSwWwkFePLVw1pGpQ7MsCycDDQ_q-"
+               Mode="Road" Grid.Row="1" Grid.Column="1" ZoomLevel="2" Center="35,0"/>
+        </Grid>
+    </Grid>
+</UserControl>

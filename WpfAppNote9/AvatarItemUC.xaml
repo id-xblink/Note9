@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="WpfAppNote9.AvatarItemUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAppNote9"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="500">
+    <Grid>
+        <Image x:Name="IAvatar" Height="45" Width="45" Margin="15 0 0 0" HorizontalAlignment="Left"/>
+        <Button x:Name="BChoose" Padding="0" Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Right" Margin="0 0 15 0">
+            <materialDesign:PackIcon Kind="Done" Width="auto" Height="auto">
+                <materialDesign:PackIcon.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Accent400}"/>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+        </Button>
+    </Grid>
+</UserControl>

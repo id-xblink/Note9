@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfAppNote9.AvatarW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNote9"
+        mc:Ignorable="d"
+        Title="Note9" Height="550" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="{DynamicResource BackgroundImage}" Stretch="UniformToFill" Opacity="0.4" Grid.RowSpan="2"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0">
+            <Grid x:Name="GList">
+
+            </Grid>
+        </ScrollViewer>
+        <Button Grid.Row="1" x:Name="BBack" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" Click="BBack_Click"/>
+    </Grid>
+</Window>

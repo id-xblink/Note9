@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfAppNote9.ChangeFieldW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNote9"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Title="Note9" Height="190" Width="400" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBlock x:Name="TBlockHint" FontSize="16"/>
+                <TextBox x:Name="TBText" materialDesign:HintAssist.Hint="Логин" FontSize="14" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5" Visibility="Collapsed" PreviewTextInput="Field_PreviewTextInput"/>
+                <PasswordBox x:Name="PBPass" materialDesign:HintAssist.Hint="Пароль" FontSize="14" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 5" Visibility="Collapsed" PreviewTextInput="Field_PreviewTextInput"/>
+                <StackPanel x:Name="SPSNL" Orientation="Horizontal" Margin="0 25" HorizontalAlignment="Center" Visibility="Collapsed">
+                    <RadioButton x:Name="RBSurname" GroupName="RBSNL" Content="Фамилию" FontSize="14" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" Click="RBSNL_Click"/>
+                    <RadioButton x:Name="RBName" GroupName="RBSNL" Content="Имя" FontSize="14" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" Margin="40 0" Click="RBSNL_Click"/>
+                    <RadioButton x:Name="RBLastname" GroupName="RBSNL" Content="Отчество" FontSize="14" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" Click="RBSNL_Click"/>
+                </StackPanel>
+                <DatePicker x:Name="DPBirth" materialDesign:HintAssist.Hint="Дата рождения" FontSize="14" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0 10" Visibility="Collapsed"/>
+            </StackPanel>
+
+            <Button Grid.Row="1" x:Name="Exit" HorizontalAlignment="Left" Content="Отмена" Click="Exit_Click"/>
+            <Button Grid.Row="1" x:Name="BChange" HorizontalAlignment="Right" Content="Изменить" Click="BChange_Click"/>
+        </Grid>
+    </Grid>
+</Window>
